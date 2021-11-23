@@ -54,7 +54,7 @@ let PlayerMoves = {
                 getEnemyHealth.innerHTML = 'Health: ' + 0;
                 getPlayerHealth.innerHTML = 'Health: ' + player.health;
             } else {
-                getEnemyHealth.innerHTML = 'Health: ' + enemy.health;
+                getEnemyHealth.innerHTML = 'Health: ' + enemy.health + ' <strong class="color-rojo">(-' + playerAttack + ')</strong>';
                 //Enemy attacks
                 let enemyAttack = getEnemyAttack();
                 player.health = player.health - enemyAttack;
@@ -64,7 +64,7 @@ let PlayerMoves = {
                     getEnemyHealth.innerHTML = 'Health: ' + enemy.health;
                     getPlayerHealth.innerHTML = 'Health: ' + 0;
                 } else {
-                    getPlayerHealth.innerHTML = 'Health: ' + player.health;
+                    getPlayerHealth.innerHTML = 'Health: ' + player.health + ' <strong class="color-rojo">(-' + enemyAttack + ')</strong>';
                 }
             }
         }
@@ -78,7 +78,7 @@ let PlayerMoves = {
                 getEnemyHealth.innerHTML = 'Health: ' + enemy.health;
                 getPlayerHealth.innerHTML = 'Health: ' + 0;
             } else {
-                getPlayerHealth.innerHTML = 'Health: ' + player.health;
+                getPlayerHealth.innerHTML = 'Health: ' + player.health + ' <strong class="color-rojo">(-' + enemyAttack + ')</strong>';
                 //Player attacks
                 let playerAttack = getPlayerAttack();
                 enemy.health = enemy.health - playerAttack;
@@ -88,7 +88,7 @@ let PlayerMoves = {
                     getEnemyHealth.innerHTML = 'Health: ' + 0;
                     getPlayerHealth.innerHTML = 'Health: ' + player.health;
                 } else {
-                    getEnemyHealth.innerHTML = 'Health: ' + enemy.health;
+                    getEnemyHealth.innerHTML = 'Health: ' + enemy.health + ' <strong class="color-rojo">(-' + playerAttack + ')</strong>';
                 }
             }
         }
