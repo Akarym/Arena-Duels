@@ -6,31 +6,31 @@ let GameManager = {
     resetFighter: function(fighterName) {
         switch (fighterName) {
             case "Nakart":
-                player = new Player(fighterName, 600, 52, 44, 28, 32, 45);
+                player = new Fighter(fighterName, 600, 52, 44, 28, 32, 45);
                 break;
             case "Koma":
-                player = new Player(fighterName, 510, 38, 62, 18, 30, 60);
+                player = new Fighter(fighterName, 510, 38, 62, 18, 30, 60);
                 break;
             case "Skeir":
-                player = new Player(fighterName, 550, 48, 42, 26, 31, 50);
+                player = new Fighter(fighterName, 550, 48, 42, 26, 31, 50);
                 break;
             case "Jess":
-                player = new Player(fighterName, 470, 70, 20, 16, 30, 80);
+                player = new Fighter(fighterName, 470, 70, 20, 16, 30, 80);
                 break;
             case "Beardboy":
-                player = new Player(fighterName, 520, 42, 45, 22, 32, 42);
+                player = new Fighter(fighterName, 520, 42, 45, 22, 32, 42);
                 break;
             case "Koren":
-                player = new Player(fighterName, 624, 58, 36, 30, 34, 40);
+                player = new Fighter(fighterName, 624, 58, 36, 30, 34, 40);
                 break;
             case "Zephyr":
-                player = new Player(fighterName, 612, 56, 49, 26, 28, 70);
+                player = new Fighter(fighterName, 612, 56, 49, 26, 28, 70);
                 break;
             case "Andrew":
-                player = new Player(fighterName, 520, 63, 22, 24, 29, 55);
+                player = new Fighter(fighterName, 520, 63, 22, 24, 29, 55);
                 break;
             case "Joshuchrist":
-                player = new Player(fighterName, 540, 44, 56, 20, 30, 65);
+                player = new Fighter(fighterName, 540, 44, 56, 20, 30, 65);
                 break;
         }
         let getInterface = document.querySelector(".interface");
@@ -58,42 +58,42 @@ let GameManager = {
         let getEnemy = document.querySelector(".enemy");
 
         // Create enemy!
-        posibleEnemies = posibleEnemies.filter(fighter => fighter !== player.fighterName);
-        let chooseRandomEnemy = Math.floor(Math.random() * Math.floor(posibleEnemies.length -1));
-        let chosenEnemy = posibleEnemies[chooseRandomEnemy];
+        fighterList = fighterList.filter(fighter => fighter !== player.fighterName);
+        let chooseRandomEnemy = Math.floor(Math.random() * Math.floor(fighterList.length -1));
+        let chosenEnemy = fighterList[chooseRandomEnemy];
 
         switch (chosenEnemy) {
             case "Nakart":
-                enemy = new Enemy(chosenEnemy, 600, 52, 44, 28, 32, 45);
+                enemy = new Fighter(chosenEnemy, 600, 52, 44, 28, 32, 45);
                 break;
             case "Koma":
-                enemy = new Enemy(chosenEnemy, 510, 38, 62, 18, 30, 60);
+                enemy = new Fighter(chosenEnemy, 510, 38, 62, 18, 30, 60);
                 break;
             case "Skeir":
-                enemy = new Enemy(chosenEnemy, 550, 48, 42, 26, 31, 50);
+                enemy = new Fighter(chosenEnemy, 550, 48, 42, 26, 31, 50);
                 break;
             case "Jess":
-                enemy = new Enemy(chosenEnemy, 470, 70, 20, 16, 30, 80);
+                enemy = new Fighter(chosenEnemy, 470, 70, 20, 16, 30, 80);
                 break;
             case "Beardboy":
-                enemy = new Enemy(chosenEnemy, 520, 42, 45, 22, 32, 42);
+                enemy = new Fighter(chosenEnemy, 520, 42, 45, 22, 32, 42);
                 break;
             case "Koren":
-                enemy = new Enemy(chosenEnemy, 624, 58, 36, 30, 34, 40);
+                enemy = new Fighter(chosenEnemy, 624, 58, 36, 30, 34, 40);
                 break;
             case "Zephyr":
-                enemy = new Enemy(chosenEnemy, 612, 56, 49, 24, 28, 70);
+                enemy = new Fighter(chosenEnemy, 612, 56, 49, 24, 28, 70);
                 break;
             case "Andrew":
-                enemy = new Enemy(chosenEnemy, 520, 63, 22, 24, 28, 55);
+                enemy = new Fighter(chosenEnemy, 520, 63, 22, 24, 28, 55);
                 break;
             case "Joshuchrist":
-                enemy = new Enemy(chosenEnemy, 540, 44, 56, 20, 30, 65);
+                enemy = new Fighter(chosenEnemy, 540, 44, 56, 20, 30, 65);
                 break;
         }
 
         getHeader.innerHTML = '<p>Choose your movement</p>';
-        getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="PlayerMoves.calcAttack()">Attack!</a>'
+        getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="FighterMoves.calcAttack()">Attack!</a>'
         getEnemy.innerHTML = '<img src="img/' + chosenEnemy + 
         '.png" class="img-avatar"><div><h3>' + chosenEnemy + 
         '</h3><p class="health-enemy">Health: ' + enemy.health + '</p>' +

@@ -1,6 +1,8 @@
+let fighterList = ["Nakart", "Koma", "Skeir", "Jess", "Beardboy", "Koren", "Zephyr", "Andrew", "Joshuchrist"];
 let player;
+let enemy;
 
-function Player(fighterName, health, attackDamage, abilityPower, armor, magicResist, speed) {
+function Fighter(fighterName, health, attackDamage, abilityPower, armor, magicResist, speed) {
     this.fighterName = fighterName;
     this.health = health;
     this.attackDamage = attackDamage;
@@ -10,7 +12,7 @@ function Player(fighterName, health, attackDamage, abilityPower, armor, magicRes
     this.speed = speed;
 }
 
-let PlayerMoves = {
+let FighterMoves = {
     calcAttack: function() {
         let getPlayerSpeed = player.speed;
         let getEnemySpeed = enemy.speed;
