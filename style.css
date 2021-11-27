@@ -35,6 +35,10 @@ body {
     color: #f8b700;
 }
 
+.defeat-header {
+    color: #BD1616 !important;
+}
+
 .interface {
     padding: 0;
     width: 100%;

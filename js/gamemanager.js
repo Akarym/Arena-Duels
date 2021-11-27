@@ -93,7 +93,7 @@ let GameManager = {
         }
 
         getHeader.innerHTML = '<p>Choose your movement</p>';
-        getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="FighterMoves.calcAttack()">Attack!</a>'
+        getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="ArenaManager.playerMove()">Attack!</a>'
         getEnemy.innerHTML = '<img src="img/' + chosenEnemy + 
         '.png" class="img-avatar"><div><h3>' + chosenEnemy + 
         '</h3><p class="health-enemy">Health: ' + enemy.health + '</p>' +
