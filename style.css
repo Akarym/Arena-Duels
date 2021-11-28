@@ -58,9 +58,10 @@ body {
     height: 120px;
 }
 
-.img-avatar {
+.img-player, .img-enemy {
     width: 160px !important;
     height: 160px !important;
+    z-index: 1;
 }
 
 .interface div {

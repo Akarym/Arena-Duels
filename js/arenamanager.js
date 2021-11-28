@@ -22,11 +22,15 @@ let ArenaManager = {
 
         let playerAttacks = function () {
             var damage = Abilities.BasicAttack(player);
+            Animations.PlayerBasicAttack();
+            Animations.EnemyDamageTaken();
             updateEnemyHealth(damage);
         }
 
         let enemyAttacks = function () {
             var damage = Abilities.BasicAttack(enemy);
+            Animations.EnemyBasicAttack();
+            Animations.PlayerDamageTaken();
             updatePlayerHealth(damage); 
         }
 

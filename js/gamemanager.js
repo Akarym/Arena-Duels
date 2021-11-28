@@ -35,7 +35,7 @@ let GameManager = {
         }
         let getInterface = document.querySelector(".interface");
         getInterface.innerHTML = '<img src="img/' + fighterName + 
-        '.png" class="img-avatar"><div><h3>' + fighterName + 
+        '.png" class="img-player"><div><h3>' + fighterName + 
         '</h3><p class="health-player">Health: ' + player.health + '</p>' +
         '</h3><p>Attack Damage: ' + player.attackDamage + '</p>' +
         '</h3><p>Ability Power: ' + player.abilityPower + '</p>' +
@@ -95,7 +95,7 @@ let GameManager = {
         getHeader.innerHTML = '<p>Choose your movement</p>';
         getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="ArenaManager.playerMove()">Attack!</a>'
         getEnemy.innerHTML = '<img src="img/' + chosenEnemy + 
-        '.png" class="img-avatar"><div><h3>' + chosenEnemy + 
+        '.png" class="img-enemy"><div><h3>' + chosenEnemy + 
         '</h3><p class="health-enemy">Health: ' + enemy.health + '</p>' +
         '</h3><p>Attack Damage: ' + enemy.attackDamage + '</p>' +
         '</h3><p>Ability Power: ' + enemy.abilityPower + '</p>' +

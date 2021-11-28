@@ -1,0 +1,46 @@
+.damage-taken-animation {
+    -moz-animation: damage-taken normal 0.4s 2 ease-in-out; /* Firefox */
+    -webkit-animation: damage-taken normal 0.4s 2 ease-in-out; /* Webkit */
+    -ms-animation: damage-taken normal 0.4s 2 ease-in-out; /* IE */
+    animation: damage-taken normal 0.4s 2 ease-in-out; /* Opera and prob css3 final iteration */
+}
+
+@keyframes damage-taken {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+.player-attack-animation {
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-name: player-attack;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes player-attack {
+    0%   { transform: translateY(0); }
+    30%  { transform: translateY(-20px); }
+    35%  { transform: translateY(230px); }
+    100%  { transform: translateY(0px); }
+}
+
+.enemy-attack-animation {
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-name: enemy-attack;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes enemy-attack {
+    0%   { transform: translateY(0); }
+    30%  { transform: translateY(20px); }
+    35%  { transform: translateY(-230px); }
+    100%  { transform: translateY(0px); }
+}
