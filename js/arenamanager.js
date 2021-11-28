@@ -7,16 +7,19 @@ let ArenaManager = {
         let getEnemyHealth = document.querySelector(".health-enemy");
         let getActions = document.querySelector(".actions");
         let getHeader = document.querySelector(".header");
+        let getArena = document.querySelector(".arena");
 
         let displayVictory = function () {
             getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="location.reload();">Play again!</a>';
-            getHeader.innerHTML = '<h1>Victory</h1>';
+            getHeader.innerHTML = '';
+            getArena.style.backgroundImage = "url('img/victory.png')";
             alert("Has ganado, gg easy. Refresca o dale al boton de play again para jugar otra vez.");
         }
 
         let displayDefeat = function () {
             getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="location.reload();">Play again!</a>';
-            getHeader.innerHTML = '<h1 class="defeat-header">Defeat</h1>';
+            getHeader.innerHTML = '';
+            getArena.style.backgroundImage = "url('img/defeat.png')";
             alert("Has perdido, malisimo xD! Refresca o dale al boton de play again para jugar otra vez.");
         }
 

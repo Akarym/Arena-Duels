@@ -23,7 +23,7 @@ body {
 }
 
 .header p {
-    font-family: arial;
+    font-family: 'Acme', sans-serif;
     font-size: 18px;
     color: #fff;
     padding-bottom: 4px;
@@ -33,10 +33,6 @@ body {
     font-family: 'Acme', sans-serif;
     font-size: 30px;
     color: #f8b700;
-}
-
-.defeat-header {
-    color: #BD1616 !important;
 }
 
 .interface {
@@ -82,8 +78,8 @@ body {
 }
 
 .interface p {
-    font-family: arial;
-    font-size: 12px;
+    font-family: 'Acme', sans-serif;
+    font-size: 14px;
     color: #d5c8af;
     line-height: 20px;
 }
@@ -103,7 +99,7 @@ body {
     padding: 10px 0px;
     text-align: center;
     font-size: 14px;
-    font-family: arial;
+    font-family: 'Acme', sans-serif;
     color: #1b1b1b;
 }
 
@@ -171,8 +167,8 @@ body {
 }
 
 .enemy p {
-    font-family: arial;
-    font-size: 12px;
+    font-family: 'Acme', sans-serif;
+    font-size: 14px;
     color: #d5c8af;
     line-height: 20px;
 }
