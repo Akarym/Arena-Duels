@@ -74,7 +74,7 @@ body {
     font-family: 'Acme', sans-serif;
     font-size: 22px;
     color: #f8b700;
-    padding: 12px 0 4px;
+    padding: 8px 0 2px;
 }
 
 .interface p {
@@ -142,7 +142,7 @@ body {
 .enemy a {
     display: flex;
     flex-wrap: nowrap;
-    }
+}
 
 .enemy img {
     width: 120px;
@@ -163,7 +163,7 @@ body {
     font-family: 'Acme', sans-serif;
     font-size: 22px;
     color: #f8b700;
-    padding: 12px 0 4px;
+    padding: 8px 0 2px;
 }
 
 .enemy p {
