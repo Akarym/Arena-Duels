@@ -38,7 +38,7 @@ let ArenaManager = {
                 getEnemyHealth.innerHTML = 'Health: ' + enemy.health;
                 displayDefeat();
             } else {
-                getPlayerHealth.innerHTML = 'Health: ' + player.health + ' <strong class="color-rojo">(-' + damage + ')</strong>';
+                getPlayerHealth.innerHTML = 'Health: ' + player.health + ' <strong class="lost-health">(-' + damage + ')</strong>';
             }
         }
 
@@ -50,7 +50,7 @@ let ArenaManager = {
                 getPlayerHealth.innerHTML = 'Health: ' + player.health;
                 displayVictory();
             } else {
-                getEnemyHealth.innerHTML = 'Health: ' + enemy.health + ' <strong class="color-rojo">(-' + damage + ')</strong>';
+                getEnemyHealth.innerHTML = 'Health: ' + enemy.health + ' <strong class="lost-health">(-' + damage + ')</strong>';
             }
         }
 
