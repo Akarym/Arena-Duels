@@ -1,6 +1,5 @@
 let ArenaManager = {
-    playerMove: function () {
-
+    playerMove: function (playerAbility) {
         let getPlayerSpeed = player.speed;
         let getEnemySpeed = enemy.speed;
         let getPlayerHealth = document.querySelector(".health-player");
@@ -12,12 +11,12 @@ let ArenaManager = {
         //Disable abilities so the player is not able to attack again while the round has not yet finished
         let disablePlayerMoves = function () {
             getActions.style.pointerEvents = 'none';
-            document.querySelector(".btn-prefight").style.background = '#cccc';
+            document.querySelector(".player-ability").style.background = '#cccc';
         }
 
         let enablePlayerMoves = function() {
             getActions.style.pointerEvents = 'auto';
-            document.querySelector(".btn-prefight").style.background = '#e64747';
+            document.querySelector(".player-ability").style.background = '#e64747';
         }
 
         let displayVictory = function () {

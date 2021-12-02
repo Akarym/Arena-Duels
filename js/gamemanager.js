@@ -6,31 +6,31 @@ let GameManager = {
     resetFighter: function(fighterName) {
         switch (fighterName) {
             case "Nakart":
-                player = new Fighter(fighterName, 600, 52, 44, 28, 32, 45);
+                player = new Nakart(fighterName, 600, 52, 44, 28, 32, 45);
                 break;
             case "Koma":
-                player = new Fighter(fighterName, 510, 38, 62, 18, 30, 60);
+                player = new Koma(fighterName, 510, 38, 62, 18, 30, 60);
                 break;
             case "Skeir":
-                player = new Fighter(fighterName, 550, 48, 42, 26, 31, 50);
+                player = new Skeir(fighterName, 550, 48, 42, 26, 31, 50);
                 break;
             case "Jess":
-                player = new Fighter(fighterName, 470, 70, 20, 16, 30, 80);
+                player = new Jess(fighterName, 470, 70, 20, 16, 30, 80);
                 break;
             case "Beardboy":
-                player = new Fighter(fighterName, 520, 42, 45, 22, 32, 42);
+                player = new Beardboy(fighterName, 520, 42, 45, 22, 32, 42);
                 break;
             case "Koren":
-                player = new Fighter(fighterName, 624, 58, 36, 30, 34, 40);
+                player = new Koren(fighterName, 624, 58, 36, 30, 34, 40);
                 break;
             case "Zephyr":
-                player = new Fighter(fighterName, 612, 56, 49, 26, 28, 70);
+                player = new Zephyr(fighterName, 612, 56, 49, 26, 28, 70);
                 break;
             case "Andrew":
-                player = new Fighter(fighterName, 520, 63, 22, 24, 29, 55);
+                player = new Andrew(fighterName, 520, 63, 22, 24, 29, 55);
                 break;
             case "Joshuchrist":
-                player = new Fighter(fighterName, 540, 44, 56, 20, 30, 65);
+                player = new Joshuchrist(fighterName, 540, 44, 56, 20, 30, 65);
                 break;
         }
         let getInterface = document.querySelector(".interface");
@@ -64,36 +64,42 @@ let GameManager = {
 
         switch (chosenEnemy) {
             case "Nakart":
-                enemy = new Fighter(chosenEnemy, 600, 52, 44, 28, 32, 45);
+                enemy = new Nakart(chosenEnemy, 600, 52, 44, 28, 32, 45);
                 break;
             case "Koma":
-                enemy = new Fighter(chosenEnemy, 510, 38, 62, 18, 30, 60);
+                enemy = new Koma(chosenEnemy, 510, 38, 62, 18, 30, 60);
                 break;
             case "Skeir":
-                enemy = new Fighter(chosenEnemy, 550, 48, 42, 26, 31, 50);
+                enemy = new Skeir(chosenEnemy, 550, 48, 42, 26, 31, 50);
                 break;
             case "Jess":
-                enemy = new Fighter(chosenEnemy, 470, 70, 20, 16, 30, 80);
+                enemy = new Jess(chosenEnemy, 470, 70, 20, 16, 30, 80);
                 break;
             case "Beardboy":
-                enemy = new Fighter(chosenEnemy, 520, 42, 45, 22, 32, 42);
+                enemy = new Beardboy(chosenEnemy, 520, 42, 45, 22, 32, 42);
                 break;
             case "Koren":
-                enemy = new Fighter(chosenEnemy, 624, 58, 36, 30, 34, 40);
+                enemy = new Koren(chosenEnemy, 624, 58, 36, 30, 34, 40);
                 break;
             case "Zephyr":
-                enemy = new Fighter(chosenEnemy, 612, 56, 49, 24, 28, 70);
+                enemy = new Zephyr(chosenEnemy, 612, 56, 49, 24, 28, 70);
                 break;
             case "Andrew":
-                enemy = new Fighter(chosenEnemy, 520, 63, 22, 24, 28, 55);
+                enemy = new Andrew(chosenEnemy, 520, 63, 22, 24, 28, 55);
                 break;
             case "Joshuchrist":
-                enemy = new Fighter(chosenEnemy, 540, 44, 56, 20, 30, 65);
+                enemy = new Joshuchrist(chosenEnemy, 540, 44, 56, 20, 30, 65);
                 break;
         }
 
         getHeader.innerHTML = '<p>Choose your movement</p>';
-        getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="ArenaManager.playerMove()">Attack!</a>'
+
+        let abilities = '';
+        player.abilities.forEach(ability => {
+            abilities = abilities + '<a href="#" class="player-ability" onclick="ArenaManager.playerMove(\'' + ability + '\')">' + ability +'!</a>'
+        });
+
+        getActions.innerHTML = abilities;
         getEnemy.innerHTML = '<img src="img/' + chosenEnemy + 
         '.png" class="img-enemy"><div><h3>' + chosenEnemy + 
         '</h3><p class="health-enemy">Health: ' + enemy.health + '</p>' +

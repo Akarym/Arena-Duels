@@ -88,6 +88,10 @@ body {
     width: 100% !important;
 }
 
+.player-ability {
+    width: 100%;
+}
+
 .actions {
     width: 100%;
     display: flex;
@@ -95,7 +99,6 @@ body {
 }
 
 .actions a {
-    width: 33.33%;
     padding: 10px 0px;
     text-align: center;
     font-size: 14px;
