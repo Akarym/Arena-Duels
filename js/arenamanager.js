@@ -9,18 +9,31 @@ let ArenaManager = {
         let getHeader = document.querySelector(".header");
         let getArena = document.querySelector(".arena");
 
+        //Disable abilities so the player is not able to attack again while the round has not yet finished
+        let disablePlayerMoves = function () {
+            getActions.style.pointerEvents = 'none';
+            document.querySelector(".btn-prefight").style.background = '#cccc';
+        }
+
+        let enablePlayerMoves = function() {
+            getActions.style.pointerEvents = 'auto';
+            document.querySelector(".btn-prefight").style.background = '#e64747';
+        }
+
         let displayVictory = function () {
             getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="location.reload();">Play again!</a>';
             getHeader.innerHTML = '';
+            getArena.innerHTML = '';
             getArena.style.backgroundImage = "url('img/victory.png')";
-            alert("Has ganado, gg easy. Refresca o dale al boton de play again para jugar otra vez.");
+            getActions.style.pointerEvents = 'auto';
         }
 
         let displayDefeat = function () {
             getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="location.reload();">Play again!</a>';
             getHeader.innerHTML = '';
+            getArena.innerHTML = '';
             getArena.style.backgroundImage = "url('img/defeat.png')";
-            alert("Has perdido, malisimo xD! Refresca o dale al boton de play again para jugar otra vez.");
+            getActions.style.pointerEvents = 'auto';
         }
 
         let playerAttacks = function () {
@@ -39,42 +52,54 @@ let ArenaManager = {
 
         let updatePlayerHealth = function(damage) {
             player.health = player.health - damage;
-            alert("Has sido atacado por " + enemy.fighterName + " y te ha causado " + damage + " de daño.");
+            getArena.innerHTML = '<p>Has sido atacado por <span class="fighter-name">' + enemy.fighterName + '</span> y te ha causado <span class="lost-health">' + damage + '</span> de daño</p>';
             if (player.health <= 0) {
                 getPlayerHealth.innerHTML = 'Health: ' + 0;
                 getEnemyHealth.innerHTML = 'Health: ' + enemy.health;
                 displayDefeat();
             } else {
-                getPlayerHealth.innerHTML = 'Health: ' + player.health + ' <strong class="lost-health">(-' + damage + ')</strong>';
+                getPlayerHealth.innerHTML = 'Health: ' + player.health + ' <span class="lost-health">(-' + damage + ')</span>';
             }
         }
 
         let updateEnemyHealth = function (damage) {
             enemy.health = enemy.health - damage;
-            alert("Has atacado a " + enemy.fighterName + " y le has causado " + damage + " de daño.");
+            getArena.innerHTML = '<p>Has atacado a <span class="fighter-name">' + enemy.fighterName + '</span> y le has causado <span class="lost-health">' + damage + '</span> de daño</p>';
             if (enemy.health <= 0) {
                 getEnemyHealth.innerHTML = 'Health: ' + 0;
                 getPlayerHealth.innerHTML = 'Health: ' + player.health;
                 displayVictory();
             } else {
-                getEnemyHealth.innerHTML = 'Health: ' + enemy.health + ' <strong class="lost-health">(-' + damage + ')</strong>';
+                getEnemyHealth.innerHTML = 'Health: ' + enemy.health + ' <span class="lost-health">(-' + damage + ')</span>';
             }
         }
+        
+        disablePlayerMoves();
 
         //Player attacks first
         if (getPlayerSpeed >= getEnemySpeed) {
             playerAttacks();
-            if (enemy.health > 0) {
-                enemyAttacks();                          
-            }
+            setTimeout(function () {
+                if (enemy.health > 0) {
+                    enemyAttacks();
+                    setTimeout(function () {
+                        enablePlayerMoves();
+                    }, 1500)
+                }
+            }, 2000)         
         }
 
         //Enemy attacks first
         else if (getEnemySpeed >= getPlayerSpeed) {           
             enemyAttacks();
-            if (player.health > 0) {
-                playerAttacks();
-            }
+            setTimeout(function () {
+                if (player.health > 0) {
+                    playerAttacks();
+                    setTimeout(function () {
+                        enablePlayerMoves();
+                    }, 1500)                       
+                }
+            }, 2000)
         }      
     }
 }
