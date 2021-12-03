@@ -59,7 +59,7 @@ let GameManager = {
 
         // Create enemy!
         fighterList = fighterList.filter(fighter => fighter !== player.fighterName);
-        let chooseRandomEnemy = Math.floor(Math.random() * Math.floor(fighterList.length -1));
+        let chooseRandomEnemy = Math.floor(Math.random() * Math.floor(fighterList.length));
         let chosenEnemy = fighterList[chooseRandomEnemy];
 
         switch (chosenEnemy) {
@@ -96,8 +96,8 @@ let GameManager = {
 
         let abilities = '';
         player.abilities.forEach(ability => {
-            abilities = abilities + '<a href="#" class="player-ability" onclick="ArenaManager.playerMove(\'' + ability + '\')">' + ability +'!</a>'
-        });
+            abilities = abilities + `<a href="#" class="player-ability" onclick="ArenaManager.playerMove('${ability}')">${ability}!</a>`
+        }); 
 
         getActions.innerHTML = abilities;
         getEnemy.innerHTML = '<img src="img/' + chosenEnemy + 

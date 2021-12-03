@@ -22,7 +22,7 @@ class Nakart extends Fighter {
 class Koma extends Fighter {
     constructor(fighterName, health, attackDamage, abilityPower, armor, magicResist, speed) {
         super(fighterName, health, attackDamage, abilityPower, armor, magicResist, speed);
-        this.abilities = ["Magic Attack"];
+        this.abilities = ["Basic Attack"];
     }
 }
 
@@ -57,14 +57,14 @@ class Zephyr extends Fighter {
 class Beardboy extends Fighter {
     constructor(fighterName, health, attackDamage, abilityPower, armor, magicResist, speed) {
         super(fighterName, health, attackDamage, abilityPower, armor, magicResist, speed);
-        this.abilities = ["Basic Attack"];
+        this.abilities = ["Basic Attack", "Convoke the Spirits"];
     }
 }
 
 class Andrew extends Fighter {
     constructor(fighterName, health, attackDamage, abilityPower, armor, magicResist, speed) {
         super(fighterName, health, attackDamage, abilityPower, armor, magicResist, speed);
-        this.abilities = ["Basic Attack"];
+        this.abilities = ["Basic Attack", "Raging Blow"];
     }
 }
 

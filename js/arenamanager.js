@@ -11,12 +11,10 @@ let ArenaManager = {
         //Disable abilities so the player is not able to attack again while the round has not yet finished
         let disablePlayerMoves = function () {
             getActions.style.pointerEvents = 'none';
-            document.querySelector(".player-ability").style.background = '#cccc';
         }
 
         let enablePlayerMoves = function() {
             getActions.style.pointerEvents = 'auto';
-            document.querySelector(".player-ability").style.background = '#e64747';
         }
 
         let displayVictory = function () {
@@ -35,15 +33,39 @@ let ArenaManager = {
             getActions.style.pointerEvents = 'auto';
         }
 
+        let playerUseAbility = function () {
+            switch (playerAbility) {
+                case "Basic Attack":
+                    return Abilities.BasicAttack(player);
+                case "Convoke the Spirits":
+                    return Abilities.ConvokeTheSpirits(player);
+                case "Raging Blow":
+                    return Abilities.RagingBlow(player);
+            }
+        }
+
+        let enemyUseAbility = function () {
+            var randomAbility = Math.floor(Math.random() * Math.floor(enemy.abilities.length));
+            let chosenAbility = enemy.abilities[randomAbility];
+            switch (chosenAbility) {
+                case "Basic Attack":
+                    return Abilities.BasicAttack(enemy);
+                case "Convoke the Spirits":
+                    return Abilities.ConvokeTheSpirits(enemy);
+                case "Raging Blow":
+                    return Abilities.RagingBlow(enemy);
+            }
+        }
+
         let playerAttacks = function () {
-            var damage = Abilities.BasicAttack(player);
+            var damage = playerUseAbility();
             Animations.PlayerBasicAttack();
             Animations.EnemyDamageTaken();
             updateEnemyHealth(damage);
         }
 
         let enemyAttacks = function () {
-            var damage = Abilities.BasicAttack(enemy);
+            var damage = enemyUseAbility();
             Animations.EnemyBasicAttack();
             Animations.PlayerDamageTaken();
             updatePlayerHealth(damage); 

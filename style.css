@@ -95,7 +95,6 @@ body {
 .actions {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
 }
 
 .actions a {
@@ -116,6 +115,10 @@ body {
 
 .actions a:nth-of-type(3) {
     background-color: #6de647;
+}
+
+.actions a:nth-of-type(4) {
+    background-color: #e64747;
 }
 
 .actions a:hover {
