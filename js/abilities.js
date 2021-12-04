@@ -13,7 +13,7 @@ let Abilities = {
     },
     ConvokeTheSpirits: function (fighter) {
         let calcOutputDamage = fighter.abilityPower;
-        for (let i = 0; i <= 16; i++){
+        for (let i = 0; i <= 16; i++) {
             calcOutputDamage = calcOutputDamage + Math.floor(Math.random() * Math.floor(10));
         }
         return calcOutputDamage;

@@ -140,7 +140,7 @@ body {
     font-family: 'Acme', sans-serif;
     font-size: 16px;
     color: #fff;
-    padding-top: 12px;
+    padding-top: 20px;
     text-align: center;
 }
 
@@ -193,4 +193,8 @@ body {
 
 .fighter-name {
     color: #f8b700;
+}
+
+.ability-text {
+    color: #2F86A6;
 }
