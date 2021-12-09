@@ -15,42 +15,42 @@ function Fighter(fighterName, health, attackDamage, abilityPower, armor, magicRe
 class Nakart extends Fighter {
     constructor(fighterName, health, attackDamage, abilityPower, armor, magicResist, speed) {
         super(fighterName, health, attackDamage, abilityPower, armor, magicResist, speed);
-        this.abilities = ["Basic Attack"];
+        this.abilities = ["Basic Attack", "Piercing Light"];
     }
 }
 
 class Koma extends Fighter {
     constructor(fighterName, health, attackDamage, abilityPower, armor, magicResist, speed) {
         super(fighterName, health, attackDamage, abilityPower, armor, magicResist, speed);
-        this.abilities = ["Basic Attack"];
+        this.abilities = ["Basic Attack", "Dark Matter"];
     }
 }
 
 class Skeir extends Fighter {
     constructor(fighterName, health, attackDamage, abilityPower, armor, magicResist, speed) {
         super(fighterName, health, attackDamage, abilityPower, armor, magicResist, speed);
-        this.abilities = ["Basic Attack"];
+        this.abilities = ["Basic Attack", "ChronoBreak"];
     }
 }
 
 class Jess extends Fighter {
     constructor(fighterName, health, attackDamage, abilityPower, armor, magicResist, speed) {
         super(fighterName, health, attackDamage, abilityPower, armor, magicResist, speed);
-        this.abilities = ["Basic Attack"];
+        this.abilities = ["Basic Attack", "Steel Tempest"];
     }
 }
 
 class Koren extends Fighter {
     constructor(fighterName, health, attackDamage, abilityPower, armor, magicResist, speed) {
         super(fighterName, health, attackDamage, abilityPower, armor, magicResist, speed);
-        this.abilities = ["Basic Attack"];
+        this.abilities = ["Basic Attack", "Broken Wings"];
     }
 }
 
 class Zephyr extends Fighter {
     constructor(fighterName, health, attackDamage, abilityPower, armor, magicResist, speed) {
         super(fighterName, health, attackDamage, abilityPower, armor, magicResist, speed);
-        this.abilities = ["Basic Attack"];
+        this.abilities = ["Basic Attack", "Bastion"];
     }
 }
 
@@ -71,7 +71,7 @@ class Andrew extends Fighter {
 class Joshuchrist extends Fighter {
     constructor(fighterName, health, attackDamage, abilityPower, armor, magicResist, speed) {
         super(fighterName, health, attackDamage, abilityPower, armor, magicResist, speed);
-        this.abilities = ["Basic Attack"];
+        this.abilities = ["Basic Attack", "Dragons Rage"];
     }
 }
 

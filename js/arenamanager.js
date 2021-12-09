@@ -1,5 +1,6 @@
 let enemyAbility;
 let attackAnimationTime = 3000;
+let gameEndAnimationTime = 2000;
 
 let ArenaManager = {
     playerMove: function (playerAbility) {
@@ -26,29 +27,47 @@ let ArenaManager = {
         }
 
         let displayVictory = function () {
-            getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="location.reload();">Play again!</a>';
-            getHeader.innerHTML = '';
-            clearCombatText();
-            getArena.style.backgroundImage = "url('img/victory.png')";
-            getActions.style.pointerEvents = 'auto';
+            setTimeout(function () {
+                getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="location.reload();">Play again!</a>';
+                getHeader.innerHTML = '';
+                clearCombatText();
+                getArena.style.backgroundImage = "url('img/victory.png')";
+                getActions.style.pointerEvents = 'auto';
+            }, gameEndAnimationTime);
         }
 
         let displayDefeat = function () {
-            getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="location.reload();">Play again!</a>';
-            getHeader.innerHTML = '';
-            clearCombatText();
-            getArena.style.backgroundImage = "url('img/defeat.png')";
-            getActions.style.pointerEvents = 'auto';
+            setTimeout(function () {
+                getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="location.reload();">Play again!</a>';
+                getHeader.innerHTML = '';
+                clearCombatText();
+                getArena.style.backgroundImage = "url('img/defeat.png')";
+                getActions.style.pointerEvents = 'auto';
+            }, gameEndAnimationTime);
         }
 
         let playerUseAbility = function () {
             switch (playerAbility) {
                 case "Basic Attack":
                     return Abilities.BasicAttack(player);
+                case "Bastion":
+                    return Abilities.Bastion(player);
+                case "Broken Wings":
+                    return Abilities.BrokenWings(player);
+                case "ChronoBreak":
+                    return Abilities.ChronoBreak(player);
                 case "Convoke the Spirits":
                     return Abilities.ConvokeTheSpirits(player);
+                case "Dark Matter":
+                    return Abilities.DarkMatter(player);
+                case "Dragons Rage":
+                    return Abilities.DragonsRage(player);
+                case "Piercing Light":
+                    return Abilities.PiercingLight(player);
                 case "Raging Blow":
-                    return Abilities.RagingBlow(player);
+                    return Abilities.RagingBlow(player);   
+                case "Steel Tempest":
+                    return Abilities.SteelTempest(player);
             }
         }
 
@@ -58,10 +77,24 @@ let ArenaManager = {
             switch (enemyAbility) {
                 case "Basic Attack":
                     return Abilities.BasicAttack(enemy);
+                case "Bastion":
+                    return Abilities.Bastion(enemy);
+                case "Broken Wings":
+                    return Abilities.BrokenWings(enemy);
+                case "ChronoBreak":
+                    return Abilities.ChronoBreak(enemy);
                 case "Convoke the Spirits":
                     return Abilities.ConvokeTheSpirits(enemy);
+                case "Dark Matter":
+                    return Abilities.DarkMatter(enemy);
+                case "Dragons Rage":
+                    return Abilities.DragonsRage(enemy);
+                case "Piercing Light":
+                    return Abilities.PiercingLight(enemy);
                 case "Raging Blow":
-                    return Abilities.RagingBlow(enemy);
+                    return Abilities.RagingBlow(enemy);   
+                case "Steel Tempest":
+                    return Abilities.SteelTempest(enemy);
             }
         }
 
